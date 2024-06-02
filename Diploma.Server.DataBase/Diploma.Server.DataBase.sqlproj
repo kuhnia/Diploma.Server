@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Database1</Name>
+    <Name>Diploma.Server.DataBase</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{e4b025d7-0e9b-4415-97a9-3f336d67e303}</ProjectGuid>
+    <ProjectGuid>{a1308c88-b2a0-41dc-9666-6b68da8684b0}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Database1</RootNamespace>
-    <AssemblyName>Database1</AssemblyName>
+    <RootNamespace>Diploma.Server.DataBase</RootNamespace>
+    <AssemblyName>Diploma.Server.DataBase</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -56,5 +56,12 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Statistic.sql" />
+    <Build Include="StoredProcedures\sp_Statistic_Create.sql" />
+    <Build Include="StoredProcedures\sp_Statistic_GetAll.sql" />
   </ItemGroup>
 </Project>

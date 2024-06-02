@@ -17,4 +17,10 @@
     <ProjectReference Include="..\Diploma.Server.DataAccess\Diploma.Server.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="tessdata\eng.traineddata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

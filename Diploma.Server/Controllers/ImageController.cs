@@ -41,7 +41,8 @@ namespace Diploma.Server.Api.Controllers
                     new CounterSnapshot
                     {
                         Id = Guid.NewGuid(),
-                        CurrentValue = double.Parse(text)
+                        CurrentValue = double.Parse(text),
+                        CreatedAt = DateTime.UtcNow,
                     });
 
                 return res ? NoContent() : StatusCode(418);

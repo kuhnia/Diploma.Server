@@ -12,7 +12,7 @@ namespace Diploma.Server.DataAccess
 {
     public class StatisticDataController : DataController
     {
-        public StatisticDataController(IConfiguration configuration) : base(configuration, "IssueReports")
+        public StatisticDataController(IConfiguration configuration) : base(configuration, "Statistic")
         {
         }
 
@@ -24,7 +24,7 @@ namespace Diploma.Server.DataAccess
             var parameters = new DynamicParameters();
             parameters.Add("@Id", counterSnapshot.Id);
             parameters.Add("@CurrentValue", counterSnapshot.CurrentValue);
-            parameters.Add("@DifferenceWithPreviousValue", counterSnapshot.DifferenceWithPreviousValue);
+            parameters.Add("@CreatedAt", counterSnapshot.CreatedAt);
             return PerformNonQuery(parameters, "Create");
         }
 

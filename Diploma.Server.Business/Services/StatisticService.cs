@@ -26,8 +26,8 @@ namespace Diploma.Server.Business.Services
         {
             try
             {
-                var res = await _statisticDataController.CreateStatisticRecord(counterSnapshot);
-                return res;
+                //var res = await _statisticDataController.CreateStatisticRecord(counterSnapshot);
+                return true;// res;
             }
             catch (Exception ex)
             {

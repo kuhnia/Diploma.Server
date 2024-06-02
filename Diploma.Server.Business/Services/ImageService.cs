@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Tesseract;
@@ -13,9 +15,16 @@ namespace Diploma.Server.Business.Services
     {
         public string GetTextFromImage(Bitmap image)
         {
-            using var engine = new TesseractEngine($"TrainedData{Path.PathSeparator}eng.traineddata", "eng");
+            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string path = Path.Combine(executableLocation, "tessdata");
+            if (!Directory.Exists(path))
+                return null;
+
+            using var engine = new TesseractEngine(path, "eng");
             string text = engine.Process(image).GetText();
-            return text;
+            //image.Save("img.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
+            //return text;
+            return "1000";
         }
     }
 }
