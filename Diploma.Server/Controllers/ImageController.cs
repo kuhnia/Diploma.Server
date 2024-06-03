@@ -1,9 +1,7 @@
 ﻿using Diploma.Entities.Models;
 using Diploma.Server.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System.Drawing;
-using System.Text.Json.Serialization;
 
 namespace Diploma.Server.Api.Controllers
 {

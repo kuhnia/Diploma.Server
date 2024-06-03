@@ -22,9 +22,7 @@ namespace Diploma.Server.Business.Services
 
             using var engine = new TesseractEngine(path, "eng");
             string text = engine.Process(image).GetText();
-            //image.Save("img.jpeg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            //return text;
-            return "1000";
+            return text;
         }
     }
 }
